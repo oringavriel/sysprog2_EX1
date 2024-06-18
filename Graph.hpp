@@ -16,7 +16,7 @@ namespace ariel
         bool isWeighed;
     public:
         Graph(); // constructor
-        void loadGraph(vector<vector<int>> gr);
+        void loadGraph(const vector<vector<int>> &gr); // passing by reference
         void printGraph();
         vector<vector<int>> getGraph();
         int getVerNum();

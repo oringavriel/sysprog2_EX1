@@ -11,7 +11,15 @@ Graph::Graph(){
     this->isDirected=false;
     this->isWeighed=false;
 }
-void Graph::loadGraph(vector<vector<int>> gr) {
+void Graph::loadGraph(const vector<vector<int>>& gr) {
+        if (gr.empty()){
+        this->graph=gr;
+        this->verNum=0;
+        this->edgeNum=0;
+        this->isDirected=false;
+        this->isWeighed=false;
+        }
+        else{
         this->graph=gr;
         this->verNum=gr.size();
         this->isDirected=false;
@@ -31,6 +39,9 @@ void Graph::loadGraph(vector<vector<int>> gr) {
                         if (gr[i][j]!=0) { //count edges
                                 count++;
                         }
+                        if (i==j && gr[i][j] !=0){ // diagonal line doesn't equal to 0
+                                throw invalid_argument("Invalid graph");
+                        }
                 }
         }     
         if (this->isDirected == true){
@@ -39,6 +50,7 @@ void Graph::loadGraph(vector<vector<int>> gr) {
         else{
              this->edgeNum= count/2;   // if the graph is not directed the we need to divide the number of edges by 2
         }  
+        }
 }
 void Graph:: printGraph(){
         cout<< "Graph with " << this->verNum<< " vertices and " << this->edgeNum<<" edges."<< endl;
