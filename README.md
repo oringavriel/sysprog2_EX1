@@ -1,7 +1,7 @@
-* System programming- assignment 1
+# System programming- assignment 1
 The project presents an implementation of a graph and various functions on it in c++.
 There are two main classes – Graph and Algorithms and a test class.
-** Graph 
+## Graph 
 The class present the graph and its fields.
  The graph is presented by 2d adjacency matrix.
  It has the private fields:  verNum- number of vertices, edgeNum-number of edges, isDirected -indicates if the graph is directed or not and isWeighed- indicates if the graph is weighed or not.
@@ -15,7 +15,7 @@ It also defines the number of edges.
 6.	int getEdgeNum() – a method that returns the number of edges of the graph.
 7.	bool getIsDirected() – a method that returns true/false if the graph is directed or not.
 8.	bool getIsWeighed() – a method that returns true/false if the graph is weighed or not.
-Algorithms
+## Algorithms
 The class presents public static algorithms that can be implemented on the graph:
 1.	static bool isConnected(Graph &gr) -the function gets a graph and returns true if it's connected or false if it isn't. the method uses the BFS algorithm.
 2.	static string shortestPath(Graph &gr,int start, int end) – the function gets a graph and a starting and ending point, and finds the shortest path between them. If there isn't a path the function returns -1. 
